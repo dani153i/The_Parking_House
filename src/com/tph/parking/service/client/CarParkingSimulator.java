@@ -1,7 +1,6 @@
-package com.tph.client.barrierclient;
+package com.tph.parking.service.client;
 
 import com.tph.parking.model.ExitRequest;
-import com.tph.parking.service.client.ParkingService;
 
 import java.util.Random;
 

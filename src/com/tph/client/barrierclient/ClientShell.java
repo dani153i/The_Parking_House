@@ -1,14 +1,13 @@
 package com.tph.client.barrierclient;
 
 import com.tph.parking.model.*;
+import com.tph.parking.service.client.CarParkingSimulator;
 import com.tph.parking.service.client.ParkingService;
 
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class ClientShell implements ParkingServiceListener {
     private Scanner scanner = new Scanner(System.in);
@@ -24,14 +23,13 @@ public class ClientShell implements ParkingServiceListener {
             parkingService = new ParkingService(1234, InetAddress.getLocalHost(), this);
             parkingService.startService();
             run = true;
-        }
-        catch (UnknownHostException e) {
+        } catch (UnknownHostException e) {
             System.out.println(e);
         }
 
         simulator = new CarParkingSimulator(parkingService);
 
-        while(run) {
+        while (run) {
             displayUI();
         }
     }
