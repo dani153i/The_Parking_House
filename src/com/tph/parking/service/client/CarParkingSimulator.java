@@ -56,4 +56,6 @@ public class CarParkingSimulator extends Thread {
         running = false;
         this.interrupt();
     }
+
+    // Add synchronized code blocks for adding and removing cars from parking object
 }
