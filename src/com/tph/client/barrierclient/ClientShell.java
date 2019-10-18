@@ -39,17 +39,17 @@ public class ClientShell implements ParkingServiceListener {
     @Override
     public void OnEnter(EnterRequest request, EnterAnswer answer, Socket socket) {
         if (answer.isAccess()) {
-            System.out.println("Car " + answer.getReceiptId() + " entered Parking House");
+            System.out.println("Car " + answer.getReceiptId() + " entered Parking House.");
         } else {
-            System.out.println("Parking house is "+ (answer.isFull() ? "full" : "closed"));
-            System.out.println("Car " + answer.getReceiptId() + " was denied access to Parking House");
+            System.out.println("Parking house is "+ (answer.isFull() ? "full" : "closed."));
+            System.out.println("Car " + answer.getReceiptId() + " was denied access to Parking House.");
         }
     }
 
     @Override
     public void OnExit(ExitRequest request, ExitAnswer answer, Socket socket) {
         if (answer.isAccess()) {
-            System.out.println("Car " + answer.getReceiptId() + " left Parking House");
+            System.out.println("Car " + answer.getReceiptId() + " left Parking House.");
         } else {
             System.out.println("Car " + answer.getReceiptId() + " cannot leave Parking house, it is not parked at Parking House.");
         }
@@ -58,7 +58,7 @@ public class ClientShell implements ParkingServiceListener {
 
     public void displayUI() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Press [Enter] to " + (simulator.isRunning() ? "stop" : "start") + " parking simulator");
+        System.out.println("Press [Enter] to " + (simulator.isRunning() ? "stop" : "start") + " parking simulator.");
 
         String input = scanner.nextLine();
 
